@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Construcao e Reforma Novo Design Ltda - Expert construction and renovation services in São Paulo. Led by Anderson Oliveira Santana.">
+    <title>NOVO DESIGN | Construção e Reforma</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           1. VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-blue: #007BFF;        /* Refresh/New Blue */
+            --dark-slate: #343a40;          /* Strong Structure */
+            --accent-cyan: #17a2b8;         /* Design Accent */
+            --light-grey: #f8f9fa;          /* Clean Background */
+            --white: #ffffff;
+            --text-color: #495057;
+            --container-width: 1150px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-slate);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        a { text-decoration: none; transition: 0.3s; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* =========================================
+           2. UTILITIES
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center { text-align: center; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header span {
+            display: block;
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            border: 2px solid var(--primary-blue);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* =========================================
+           3. HEADER
+           ========================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-slate);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--dark-slate);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* =========================================
+           4. HERO SECTION
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Construction Renovation */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            color: #f8f9fa;
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 20px;
+        }
+
+        /* =========================================
+           5. ABOUT US
+           ========================================= */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: var(--text-color);
+        }
+
+        .principal-card {
+            margin-top: 30px;
+            background: var(--light-grey);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-cyan);
+        }
+
+        .principal-card h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .about-img img {
+            border-radius: 10px;
+            box-shadow: 20px 20px 0 var(--primary-blue);
+        }
+
+        /* =========================================
+           6. SERVICES
+           ========================================= */
+        .services {
+            background-color: var(--light-grey);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 30px;
+            border-radius: 8px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 123, 255, 0.1);
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border-radius: 50%;
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #6c757d;
+        }
+
+        /* =========================================
+           7. ADVANTAGES
+           ========================================= */
+        .advantages {
+            background-color: var(--dark-slate);
+            color: var(--white);
+        }
+
+        .advantages .section-header h2 { color: var(--white); }
+        .advantages .section-header span { color: var(--accent-cyan); }
+
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .adv-item {
+            text-align: left;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+
+        .adv-item h4 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .adv-item p {
+            color: #ced4da;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           8. PROCESS
+           ========================================= */
+        .process {
+            background-color: var(--white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--light-grey);
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            background: var(--white);
+            padding: 0 15px;
+            width: 30%;
+            text-align: center;
+        }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 0 10px var(--white);
+        }
+
+        /* =========================================
+           9. CONTACT FORM
+           ========================================= */
+        .contact {
+            background-color: var(--light-grey);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            background: var(--white);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .contact-info {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 60px;
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+        }
+
+        .info-item span {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .contact-form {
+            padding: 60px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-family: 'Roboto', sans-serif;
+            background: #fcfcfc;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background: #fff;
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            border: none;
+        }
+
+        /* =========================================
+           10. FOOTER
+           ========================================= */
+        footer {
+            background-color: var(--dark-slate);
+            color: #adb5bd;
+            padding: 60px 0 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 3rem; }
+            .about-grid, .services-grid, .adv-grid, .contact-wrapper { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; gap: 40px; }
+            .process-steps::before { display: none; }
+            .step { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">NOVO <span>DESIGN</span></div>
+            <nav class="nav-links">
+                <a href="#about">Company</a>
+                <a href="#services">Services</a>
+                <a href="#process">Workflow</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Redefining Construction.<br>Revitalizing Spaces.</h1>
+            <p>Construcao e Reforma Novo Design Ltda delivers high-quality nonresidential construction and transformative renovations in São Paulo. Experience the new standard.</p>
+            <a href="#contact" class="btn btn-outline">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="section-header" style="text-align: left; margin: 0 0 30px 0;">
+                        <span>Who We Are</span>
+                        <h2>A New Era of Construction</h2>
+                    </div>
+                    <p>Located in the bustling heart of São Paulo, Construcao e Reforma Novo Design Ltda is a construction firm dedicated to both new builds and the intelligent revitalization of existing structures.</p>
+                    <p>Under the leadership of Anderson Oliveira Santana, we specialize in the nonresidential sector. We understand that modern businesses need spaces that are not only structurally sound but also adaptable and aesthetically current. Our "Novo Design" philosophy integrates contemporary construction techniques with efficient renovation strategies.</p>
+                    <p>From industrial facility upgrades to complete commercial fit-outs, we bring a fresh perspective to every project site in São Paulo.</p>
+                    
+                    <div class="principal-card">
+                        <h4>Anderson Oliveira Santana</h4>
+                        <p style="margin:0; font-size: 0.9rem; color: #6c757d;">Key Principal & Director</p>
+                    </div>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Renovation Construction">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span>Our Expertise</span>
+                <h2>Comprehensive Solutions</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box">&#9874;</div> <h3>Commercial Construction</h3>
+                    <p>Execution of new nonresidential buildings. We manage ground-up construction projects for retail, office, and industrial sectors with a focus on durability.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">&#128296;</div> <h3>Structural Renovation</h3>
+                    <p>Specialized "Reforma" services. We modernize aging structures, reinforce foundations, and upgrade facilities to meet current safety and aesthetic standards.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">&#127912;</div> <h3>Design-Build</h3>
+                    <p>Integrating "Novo Design" into every build. We collaborate with architects to ensure that the final construction reflects a modern, functional vision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span style="color: var(--accent-cyan);">Why Choose Us</span>
+                <h2 style="color: var(--white);">The Novo Design Difference</h2>
+            </div>
+            <div class="adv-grid">
+                <div class="adv-item">
+                    <h4>Modern Techniques</h4>
+                    <p>We utilize the latest construction methodologies to ensure efficiency and longevity. Our "Novo" approach means we never rely on outdated practices.</p>
+                </div>
+                <div class="adv-item">
+                    <h4>Sao Paulo Expertise</h4>
+                    <p>Based locally, we navigate the complex logistics and regulations of São Paulo construction seamlessly, preventing delays and ensuring compliance.</p>
+                </div>
+                <div class="adv-item">
+                    <h4>Versatility</h4>
+                    <p>Whether it is a new build (Construcao) or a retrofit (Reforma), our team has the diverse skill set required to handle the unique challenges of both.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span>Workflow</span>
+                <h2>How We Work</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">&#128269;</div>
+                    <h3>Assessment</h3>
+                    <p>We audit the site or existing structure in São Paulo to determine the scope of construction or renovation needed.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">&#128202;</div>
+                    <h3>Planning</h3>
+                    <p>Our team develops a strategic roadmap, including technical blueprints, material sourcing, and timeline estimation.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">&#127959;</div>
+                    <h3>Execution</h3>
+                    <p>We deploy our skilled workforce to execute the build or reform, maintaining strict quality control until handover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Start Your Project</h3>
+                    <p style="color: #e9ecef; margin-bottom: 30px;">Ready to renovate or build in São Paulo? Contact Novo Design today.</p>
+                    
+                    <div class="info-item">
+                        <span>Location</span>
+                        São Paulo, SP<br>Brazil
+                    </div>
+                    <div class="info-item">
+                        <span>Email</span>
+                        info@construcaoereformanovo.info
+                    </div>
+                    <div class="info-item">
+                        <span>Principal</span>
+                        Anderson Oliveira Santana
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Service (e.g. Renovation, New Build)">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Project details..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-brand">NOVO DESIGN</div>
+            <p>&copy; 2023 Construcao e Reforma Novo Design Ltda. All Rights Reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.6;">São Paulo, Brazil | info@construcaoereformanovo.info</p>
+        </div>
+    </footer>
+
+</body>
+</html>
